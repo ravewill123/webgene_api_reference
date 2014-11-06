@@ -1,6 +1,7 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
 #WEBGENE API SAMPLE 
 
-##<i class="glyphicon glyphicon-file"></i>Add New User
+##<i class="glyphicon glyphicon-file"></i>註冊新使用者
 
 ![img](http://blog.webgene.com.tw/wp-content/uploads/2013/08/531790_10151762254634275_727473753_n.jpg)
 
@@ -67,5 +68,3 @@ Param | Type | Description
 ```
     
 
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
