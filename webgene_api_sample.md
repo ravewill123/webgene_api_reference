@@ -1,11 +1,10 @@
 #WEBGENE API SAMPLE 
 
-##Add New User
+##<i class="icon-file"></i>Add New User
 
-###Diagram
 ![img](http://blog.webgene.com.tw/wp-content/uploads/2013/08/531790_10151762254634275_727473753_n.jpg)
 
-writing down this api description here …. if nothing to say , u can leave blank here….. 
+API說明情境與注意事項
 
 ###Method
 > `POST` user.php
