@@ -1,7 +1,7 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css">
 #WEBGENE API SAMPLE 
 
-##<i class="glyphicon glyphicon-file"></i>註冊新使用者
+##<i class="icon-tags"></i>註冊新使用者
 
 ![img](http://blog.webgene.com.tw/wp-content/uploads/2013/08/531790_10151762254634275_727473753_n.jpg)
 
