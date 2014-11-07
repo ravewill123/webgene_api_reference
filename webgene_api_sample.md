@@ -1,70 +1,91 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css">
 #WEBGENE API SAMPLE 
 
-##<i class="icon-tags"></i>註冊新使用者
+##![icon][1] 註冊新使用者
 
 ![img](http://blog.webgene.com.tw/wp-content/uploads/2013/08/531790_10151762254634275_727473753_n.jpg)
 
-API說明情境與注意事項
+API情境說明與注意事項，例如：登入身分驗證於登入頁面時存於Session，前端程式不再 POST 相關資訊，這邊僅回傳 User 額外填寫資訊。
 
 ###Method
 > `POST` user.php
 
-###Paramaters
+###Parameters
 
-* `name`: Full Name of user.
-* `email`: Email of user.
-* `tel`: Phone number of user.
+Param | Type | Description  | Option 
+--------|-------|----------|------|------
+`name`| string | user 全名 | M| 
+`email` | string | user email | M| 
+`tel` | string | user 手機 | O|
+`friends` | JSON | 朋友uid清單使用 "," 分隔 | M
 
-Param | Type | Description
---------|-------|--------------
-`name`| string | user fullname 
-`email` | string | user email 
-`tel` | string | user cell
+**`M- Mandatory, O - Optional`**
+
+
+> **e.q.**
+>
+>`friends`: ["100005896","1000566322","10005531"]
 
 ###Response
 
-* `code`: Request status code.
-* `message`: Error message (if no error will be _**null**_).
-* `user_id`: User identity number from database. 
+* `code`: 正常200, 有錯誤時500
+* `message`: 錯誤訊息 ( code=200時回覆 _**null**_ ).
+* `user_id`: 使用者ID. 
 
 ```
 {
 	"code":200,
-	"message":"success",
+	"message":null,
 	"user_id":13
 }
 ```
 
-<br/>
+<br/><br/><br/><br/>
 
-##Remove User Data
+##![icon][1] 註冊新使用者
 
-###Diagram
 ![img](http://blog.webgene.com.tw/wp-content/uploads/2013/08/531790_10151762254634275_727473753_n.jpg)
 
+API情境說明與注意事項，例如：登入身分驗證於登入頁面時存於Session，前端程式不再 POST 相關資訊，這邊僅回傳 User 額外填寫資訊。
+
 ###Method
-> `POST` user_delete.php
+> `POST` user.php
 
-###Paramaters
+###Parameters
 
-* `id`: User identity number.
+Param | Type | Description  | Option 
+--------|-------|----------|------|------
+`name`| string | user 全名 | M| 
+`email` | string | user email | M| 
+`tel` | string | user 手機 | O|
+`friends` | JSON | 朋友uid清單使用 "," 分隔 | M
 
-Param | Type | Description
---------|-------|--------------
-`id`| int | user id 
+**`M- Mandatory, O - Optional`**
+
+
+> **e.q.**
+>
+>`friends`: ["100005896","1000566322","10005531"]
 
 ###Response
 
-* `code`: Request status code.
-* `message`: Error message (if no error will be _**null**_).
-* `user_id`: User identity number from database. 
+* `code`: 正常200, 有錯誤時500
+* `message`: 錯誤訊息 ( code=200時回覆 _**null**_ ).
+* `user_id`: 使用者ID. 
 
 ```
 {
 	"code":200,
-	"message":"success",
+	"message":null,
+	"user_id":13
 }
 ```
+
     
 
+
+<br/><br/><br/>
+_**Icon from [Glyphicons][0]**_
+
+[0]: http://glyphicons.com/ "Glyphicons"
+[1]: https://raw.githubusercontent.com/ravewill123/webgene_api_reference/evan/glyphicons/png/glyphicons_036_file.png "API Item"
+[2]: "Option"
