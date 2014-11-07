@@ -13,10 +13,10 @@ API情境說明與注意事項，例如：登入身分驗證於登入頁面時�
 
 Param | Type | Description  | Option 
 --------|-------|----------|------|------
-`name`| string | user 全名 | M| 
-`email` | string | user email | M| 
-`tel` | string | user 手機 | O|
-`friends` | JSON | 朋友uid清單使用 "," 分隔 | M
+[name][2]| string | user 全名 | M| 
+[email][2] | string | user email | M| 
+[tel][2] | string | user 手機 | O|
+[friends][2] | JSON | 朋友uid清單使用 "," 分隔 | M
 
 **`M- Mandatory, O - Optional`**
 
@@ -54,10 +54,10 @@ API情境說明與注意事項，例如：登入身分驗證於登入頁面時�
 
 Param | Type | Description  | Option 
 --------|-------|----------|------|------
-`name`| string | user 全名 | M| 
-`email` | string | user email | M| 
-`tel` | string | user 手機 | O|
-`friends` | JSON | 朋友uid清單使用 "," 分隔 | M
+[name][2]| string | user 全名 | M| 
+[email][2] | string | user email | M| 
+[tel][2] | string | user 手機 | O|
+[friends][2] | JSON | 朋友uid清單使用 "," 分隔 | M
 
 **`M- Mandatory, O - Optional`**
 
@@ -88,4 +88,4 @@ _**Icon from [Glyphicons][0]**_
 
 [0]: http://glyphicons.com/ "Glyphicons"
 [1]: https://raw.githubusercontent.com/ravewill123/webgene_api_reference/evan/glyphicons/png/glyphicons_036_file.png "API Item"
-[2]: "Option"
+[2]: "#"
