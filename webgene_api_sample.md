@@ -1,5 +1,7 @@
-#WEBGENE API SAMPLE 
+#WEBGENE API SAMPLE
 
+
+==========
 ##![icon][1] 註冊新使用者
 
 ![img](http://blog.webgene.com.tw/wp-content/uploads/2013/08/531790_10151762254634275_727473753_n.jpg)
@@ -12,13 +14,13 @@ API情境說明與注意事項，例如：登入身分驗證於登入頁面時�
 ###Parameters
 
 Param | Type | Description  | Option 
---------|-------|----------|------|------
+------| -----| -------------| :-----:
 [name][2]| string | user 全名 | M| 
 [email][2] | string | user email | M| 
 [tel][2] | string | user 手機 | O|
 [friends][2] | JSON | 朋友uid清單使用 "," 分隔 | M
 
-**`M- Mandatory, O - Optional`**
+*`M- Mandatory, O - Optional`*
 
 
 > **e.q.**
@@ -41,6 +43,8 @@ Param | Type | Description  | Option
 
 <br/><br/><br/><br/>
 
+
+==========
 ##![icon][1] 註冊新使用者
 
 ![img](http://blog.webgene.com.tw/wp-content/uploads/2013/08/531790_10151762254634275_727473753_n.jpg)
@@ -53,13 +57,13 @@ API情境說明與注意事項，例如：登入身分驗證於登入頁面時�
 ###Parameters
 
 Param | Type | Description  | Option 
---------|-------|----------|------|------
+------| -----| -------------| :-----:
 [name][2]| string | user 全名 | M| 
 [email][2] | string | user email | M| 
 [tel][2] | string | user 手機 | O|
 [friends][2] | JSON | 朋友uid清單使用 "," 分隔 | M
 
-**`M- Mandatory, O - Optional`**
+*`M- Mandatory, O - Optional`*
 
 
 > **e.q.**
@@ -84,6 +88,8 @@ Param | Type | Description  | Option
 
 
 <br/><br/><br/>
+
+==========
 _**Icon from [Glyphicons][0]**_
 
 [0]: http://glyphicons.com/ "Glyphicons"
