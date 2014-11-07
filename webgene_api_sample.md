@@ -9,7 +9,7 @@
 API情境說明與注意事項，例如：登入身分驗證於登入頁面時存於Session，前端程式不再 POST 相關資訊，這邊僅回傳 User 額外填寫資訊。
 
 ###Method
-> `POST` user.php
+> #### `POST` user.php
 
 ###Parameters
 
@@ -52,7 +52,7 @@ Param | Type | Description  | Option
 API情境說明與注意事項，例如：登入身分驗證於登入頁面時存於Session，前端程式不再 POST 相關資訊，這邊僅回傳 User 額外填寫資訊。
 
 ###Method
-> `POST` user.php
+> #### `POST` user.php
 
 ###Parameters
 
