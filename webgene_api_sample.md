@@ -18,7 +18,7 @@ Param | Type | Description  | Option
 [name][2]| string | user 全名 | M| 
 [email][2] | string | user email | M| 
 [tel][2] | string | user 手機 | O|
-[friends][2] | JSON | 朋友uid清單使用 "," 分隔 | M
+[friends][2] | JSON | 朋友uid清單 | M
 
 *`M- Mandatory, O - Optional`*
 
@@ -61,7 +61,7 @@ Param | Type | Description  | Option
 [name][2]| string | user 全名 | M| 
 [email][2] | string | user email | M| 
 [tel][2] | string | user 手機 | O|
-[friends][2] | JSON | 朋友uid清單使用 "," 分隔 | M
+[friends][2] | JSON | 朋友uid清單 | M
 
 *`M- Mandatory, O - Optional`*
 
