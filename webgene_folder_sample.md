@@ -189,9 +189,15 @@ scope各自獨立減少程式衝突的情況
  });
 ```
 
-##推薦framework或library
+##推薦framework, library & tools
 > Underscore.js -- 有各種完整的輔助函式可用，能讓程式碼更簡潔，讓自己寫的程式碼更容易觀看。
 >
 > AngularJS -- 加快網頁開發速度降低開發複雜度。
 >
 > ui-router -- 讓AngularJS使用router更靈活
+>
+> Webpack -- 整合壓縮javascript
+>
+> gulp -- 規範專案結構，與webpack搭配壓縮優化程式檔案與圖檔
+>
+> fire.app -- SCSS編譯GUI工具
