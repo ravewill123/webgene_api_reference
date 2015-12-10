@@ -20,7 +20,7 @@ export namespace date {
 		/**
 		 * 返回時間差-毫秒
 		 * 
-		 * @return {number} [description]
+		 * @return {number} 返回毫秒時間差
 		 */
 		gap():number {
 			return new Date().getTime() - this.date.getTime();
