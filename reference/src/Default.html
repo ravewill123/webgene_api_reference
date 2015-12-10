@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant-TW" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1" />
+    <!-- facebook share -->
+    <meta property="og:type" content="website" />
+    <meta property="fb:app_id" content="{%= o.htmlWebpackPlugin.options.release ? '368802019956990' : '484251458252681' %}" />
+    <meta property="og:url" content=""/>
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta name="description" content="" />
+    <meta property="og:image" content="" />
+    <title>wg-project</title>
+    <!-- favicon -->
+    <link rel="icon" href="favicon.ico">
+    <!-- css style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    {% if (!o.htmlWebpackPlugin.options.release) { %}
+    <!-- 替換正式設定用資料 -->
+    <script>
+        window.setting = {
+          appID: "484251458252681",
+          description: "Replace WebGene Template Setting"
+        };
+    </script>
+    {% } %}
+    <!-- 還可以像這樣讀出資源後操作 (htmlWebpackPlugin.files)
+
+        {
+          "files": {
+            "css": [ "main.css"],
+            "js": [ "assets/head_bundle.js", "assets/main_bundle.js" ],
+            "chunks": {
+              "head": {
+                "entry": "assets/head_bundle.js",
+                "css": [ "main.css" ]
+              },
+              "main": {
+                "entry": "assets/main_bundle.js",
+                "css": []
+              }
+            }
+          }
+        }
+
+        {% for (var chunk in o.htmlWebpackPlugin.files.chunks) { %}
+            <script src="{%=o.htmlWebpackPlugin.files.chunks[chunk].entry %}"></script>
+        {% } %}
+    -->
+</head>
+<body>
+	  <div ui-view class="view-animate" style="width: 100%; height: 100%;">
+        <div style="top:50%; position: absolute; width:100vw; text-align: center;">
+            <div class="loading"><img src="img/loading.gif" width="60" alt=""></div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r73/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js"></script>
+    <script src="js/vendor/three/renderers/CSS3DRenderer.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-sanitize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="https://code.createjs.com/preloadjs-0.6.2.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+@import "compass/css3";
+
+
+// ng-view
+.view-animate.ng-leave {
+  position: absolute;
+}
+.view-animate.ng-enter {
+  position: absolute;
+}
+.view-animate.ng-enter, .view-animate.ng-leave {
+    transition: opacity 0.6s ease-in;
+}
+.view-animate.ng-enter, .view-animate.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+.view-animate, .view-animate.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+// ng-show
+.animate-show {
+  opacity: 1;
+}
+.animate-show.ng-hide-add, .animate-show.ng-hide-remove {
+  transition: all linear 0.5s;
+  position:  absolute;
+}
+.animate-show.ng-hide {
+  opacity: 0;
+}
+
+
+.animate-left {
+  margin-left: 0% !important;
+}
+.animate-left.ng-hide-add, .animate-left.ng-hide-remove {
+  transition: all ease-in-out 0.4s;
+}
+.animate-left.ng-hide {
+  margin-left: -100% !important;
+}
+
+
+.animate-switch {
+  transition: all linear 0.3s;
+}
+.animate-switch.ng-animate {
+  opacity: 1;
+}
+.animate-switch.ng-leave.ng-leave-active,
+.animate-switch.ng-enter {
+  opacity: 0;
+}
+.animate-switch.ng-leave,
+.animate-switch.ng-enter.ng-enter-active {
+  opacity: 1;
+}

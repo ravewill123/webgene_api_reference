@@ -1,0 +1,79 @@
+// reset
+@import "compass/reset";
+// font style
+@import "color";
+@import "typography";
+// layout
+@import "layout";
+// form
+@import "form";
+// mixin
+@import "mixin";
+@import "animate";
+// web own style
+
+body {
+	background: url('../img/star.jpg');
+}
+
+.loading {
+    width: 80px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 3px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+    z-index: 100;
+}
+
+.black {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.6;
+}
+
+.header {
+	width: 100%;
+	height: 50px;
+	background: rgba(0,0,0,0.5);
+	color: white;
+	text-align: center;
+	line-height:55px;
+}
+
+.wrap {
+	text-align: center;
+}
+
+.issue {
+	height:55px;
+	color: white;
+	line-height:55px;
+}
+
+.button {
+    width: 150px;
+    height: 35px;
+    background: #3F549D;
+    display: block;
+    border: rgba(255,255,255,1) solid 3px;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    line-height: 32px;
+    margin: 10px auto;
+}
+
+#date, #time, #second, #minute, #hour, #day {
+    width: 400px;
+    margin: 20px auto;
+    color: white;
+}
