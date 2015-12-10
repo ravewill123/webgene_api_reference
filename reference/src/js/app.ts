@@ -26,11 +26,11 @@ function($rootScope,   $state,   $stateParams,   webPath,   $window,   getSearch
         FB.getLoginStatus( response => {
             if (response.status === 'connected') {
                 // 確認權限
-                FB.api('/me/permissions', {}, response2 => {
+                FB.api('/me/permissions', {}, (fbResponse:any) => {
                     let havePermission = false;
-                    if (response2) {
-                        for (let i = 0; i < response2.data.length; i++) {
-                            if (response2.data[i].permission == 'email') {
+                    if (fbResponse) {
+                        for (let i = 0; i < fbResponse.data.length; i++) {
+                            if (fbResponse.data[i].permission == 'email') {
                                 havePermission = true;
                                 break;
                             }

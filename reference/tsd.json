@@ -37,6 +37,9 @@
     },
     "moment/moment-node.d.ts": {
       "commit": "923c5431d9447db9d5cf41adc5914e3c94c1ff10"
+    },
+    "fbsdk/fbsdk.d.ts": {
+      "commit": "f8af639bf29b2b00e5d27ce93c0f046564b8525c"
     }
   }
 }
