@@ -4,27 +4,27 @@
 ## Folder Map
 
 ```	
-	/admin     
-	/api
-	/asset
-		/video
-		/audio
-		/svg
-	/css
-	/font
-	/img
-	/js
-		/vendor
-	/mobile
-		/css
-		/js
-			/vendor
-		/asset
-	/sass
-		/partial
-		/page
-	/template
-	/upload	
+    ├── admin     
+    ├── api
+    ├─┬ asset
+    │ ├── video
+    │ ├── audio
+    │ └── svg
+    ├── css
+    ├── font
+    ├── img
+    ├─┬ js
+    │ └── vendor
+    ├─┬ mobile
+    │ ├── asset
+    │ ├── css
+    │ └─┬ js
+    │   └── vendor
+    ├─┬ sass
+    │ ├── partial
+    │ └── page
+    ├── template
+    └── upload
 	
 ```
 
@@ -200,4 +200,4 @@ scope各自獨立減少程式衝突的情況
 >
 > gulp -- 規範專案結構，與webpack搭配壓縮優化程式檔案與圖檔
 >
-> fire.app -- SCSS編譯GUI工具
+> Prepros -- SCSS編譯GUI工具，支援AutoPrefix & AutoReload.
