@@ -4,7 +4,9 @@ var path  = require('path'),
 module.exports = {
   entry: {
     app:  './src/js/app.ts',
-    otherPage: './src/js/otherPage.ts'
+    otherPage: './src/js/otherPage.ts',
+    bannerA: './src/js/bannerA.js',
+    bannerB: './src/js/bannerB.js'
   },
   externals: {},
   plugins: [
@@ -38,9 +40,22 @@ module.exports = {
           removeComments: true,
           collapseWhitespace: true, preserveLineBreaks:true
         }
+    }),
+    new HtmlWebpackPlugin(
+    {
+        chunks: [],
+        filename : 'bannerPage.html',
+        template : './src/bannerPage.html',
+        minify: {
+          minifyCSS: true,
+          minifyJS: false,
+          removeComments: true,
+          collapseWhitespace: true, preserveLineBreaks:true
+        }
     })
   ],
   output: {
+    libraryTarget: "umd", // 使用umd模塊可以直接嵌入網頁也可以由RequireJS動態載入
     // path: path.join(__dirname, "build", "1.0.0"),
     path: path.join(__dirname, "build"),
     publicPath: "",

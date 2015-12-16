@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1" />
+    <!-- facebook share -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content=""/>
+    <meta property="og:title" content="AMD Module Website" />
+    <meta property="og:description" content="多獨立區塊處理使用RequireJS導入頁面中" />
+    <meta name="description" content="多獨立區塊處理使用RequireJS導入頁面中" />
+    <meta property="og:image" content="" />
+    <title>AMD Module Website</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrap">
+        <div id="bannerA" class="banner"></div>
+        <div id="bannerB" class="banner"></div>
+    </div>
+	
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.22/require.min.js"></script>
+    <script>
+        requirejs.config({
+            baseUrl: 'js',
+            paths: {
+                jquery: 'https://code.jquery.com/jquery-1.11.3.min'
+            }
+        });
+
+        require(['jquery', 'bannerA', 'bannerB'], function ($, bannerA, bannerB) {
+            bannerA('#bannerA');
+            bannerB('#bannerB');
+        });
+    </script>
+</body>
+</html>
