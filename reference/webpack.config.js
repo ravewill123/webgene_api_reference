@@ -1,5 +1,6 @@
 var path  = require('path'),
-    HtmlWebpackPlugin  = require('html-webpack-plugin');
+    HtmlWebpackPlugin  = require('html-webpack-plugin'),
+    webpack = require("webpack");
 
 module.exports = {
   entry: {
@@ -52,6 +53,10 @@ module.exports = {
           removeComments: true,
           collapseWhitespace: true, preserveLineBreaks:true
         }
+    }),
+    new webpack.DefinePlugin({
+      // 將 Environment Variables - 環境變數傳入
+      'process.env': JSON.stringify({ RELEASE: process.env.RELEASE })
     })
   ],
   output: {
