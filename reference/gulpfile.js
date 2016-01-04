@@ -126,11 +126,15 @@ gulp.task("webpack-dev-server", function(callback) {
 ///////////////////////////////
 // Clean
 ///////////////////////////////
-gulp.task('clean', function(cb) {
-    del(['build/images', 'build/img'], cb);
+gulp.task('clean', function(callback) {
+    del(['build/images', 'build/img']).then(paths => {
+        callback();
+    });
 });
-gulp.task('cleanCSS', function(cb) {
-    del(['build/css/*.css'], cb);
+gulp.task('cleanCSS', function(callback) {
+    del(['build/css/*.css']).then(paths => {
+        callback();
+    });
 });
 // 當發現圖片被快取一直無法更新時執行一下 $ gulp clear
 gulp.task('clear', function (done) {

@@ -6,6 +6,8 @@ npm-debug.log*
 # sass cache
 .sass-cache
 
+gulp-cache
+
 # Optional npm cache directory
 .npm
 
