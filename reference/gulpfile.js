@@ -157,6 +157,7 @@ gulp.task('copyImg', [], function() {
     .pipe($.plumber({
         errorHandler: onError
     }))
+    .pipe(gulp.dest('build/img'))  // imagemin 最佳化圖檔有些圖可能會複製不過去,所以先 clone 一份到 img 防止漏圖
     .pipe($.cache($.imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
     .pipe(gulp.dest('build/img'))
     .pipe($.connect.reload());
