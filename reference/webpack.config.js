@@ -21,10 +21,10 @@ module.exports = {
         inject: 'body',
         hash: true,
         minify: {
-          minifyCSS: true,
-          minifyJS: false,
-          removeComments: true,
-          collapseWhitespace: true, preserveLineBreaks:true
+          minifyCSS: process.env.DEPLOY === "1" ? true : false,
+          minifyJS: process.env.DEPLOY === "1" ? true : false,
+          removeComments: process.env.DEPLOY === "1" ? true : false,
+          collapseWhitespace: process.env.DEPLOY === "1" ? true : false, preserveLineBreaks:true
         }
     }),
     new HtmlWebpackPlugin(
@@ -36,10 +36,10 @@ module.exports = {
         inject: 'body',
         hash: true,
         minify: {
-          minifyCSS: true,
-          minifyJS: false,
-          removeComments: true,
-          collapseWhitespace: true, preserveLineBreaks:true
+          minifyCSS: process.env.DEPLOY === "1" ? true : false,
+          minifyJS: process.env.DEPLOY === "1" ? true : false,
+          removeComments: process.env.DEPLOY === "1" ? true : false,
+          collapseWhitespace: process.env.DEPLOY === "1" ? true : false, preserveLineBreaks:true
         }
     }),
     new HtmlWebpackPlugin(
@@ -48,10 +48,10 @@ module.exports = {
         filename : 'bannerPage.html',
         template : './src/bannerPage.html',
         minify: {
-          minifyCSS: true,
-          minifyJS: false,
-          removeComments: true,
-          collapseWhitespace: true, preserveLineBreaks:true
+          minifyCSS: process.env.DEPLOY === "1" ? true : false,
+          minifyJS: process.env.DEPLOY === "1" ? true : false,
+          removeComments: process.env.DEPLOY === "1" ? true : false,
+          collapseWhitespace: process.env.DEPLOY === "1" ? true : false, preserveLineBreaks:true
         }
     }),
     new webpack.DefinePlugin({

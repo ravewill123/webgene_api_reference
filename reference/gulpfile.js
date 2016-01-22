@@ -38,21 +38,21 @@ var onError = function(err) {
 ///////////////////////////////
 // Default task
 ///////////////////////////////
-gulp.task('default', ['copySVG', 'copyImg', 'copyVendor', 'styles'], function() {
+gulp.task('default', ['copyAll', 'styles'], function() {
     gulp.start(['webpack']);
 });
 
 ///////////////////////////////
 // Server
 ///////////////////////////////
-gulp.task('server', ['copySVG', 'copyImg', 'copyVendor', 'styles'], function() {
+gulp.task('server', ['copyAll', 'styles'], function() {
     gulp.start(['webpack-dev-server']);
 });
 
 ///////////////////////////////
 // Watch
 ///////////////////////////////
-gulp.task('watch', ['copySVG', 'copyImg', 'copyVendor', 'styles', 'webpack', 'connect'], function() {
+gulp.task('watch', ['copyAll', 'styles', 'webpack', 'connect'], function() {
   gulp.watch('src/js/**/*', ['webpack']).on('change', function(event) {
     // deleted, changed, added
   });
@@ -143,6 +143,9 @@ gulp.task('clear', function (done) {
 ///////////////////////////////
 // Minify Img & SVG & vendor JS
 ///////////////////////////////
+gulp.task('copyAll', ['copySVG', 'copyImg', 'copyVendor'], function(callback) {
+    callback();
+});
 gulp.task('copySVG', [], function() {
     return gulp.src(['src/asset/**/*'])
     .pipe($.plumber({
@@ -157,7 +160,7 @@ gulp.task('copyImg', [], function() {
     .pipe($.plumber({
         errorHandler: onError
     }))
-    .pipe(gulp.dest('build/img'))  // imagemin 最佳化圖檔有些圖可能會複製不過去,所以先 clone 一份到 img 防止漏圖
+    .pipe(gulp.dest('build/img')) // imagemin 最佳化圖檔有些圖可能會複製不過去,所以先 clone 一份到 img 防止漏圖
     .pipe($.cache($.imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
     .pipe(gulp.dest('build/img'))
     .pipe($.connect.reload());

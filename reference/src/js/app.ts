@@ -104,7 +104,7 @@ function( $stateProvider,   $urlRouterProvider,   $httpProvider) {
 // register factory
 //////////////////////////////////////////////////////
 
-import factoryLibs = require('./factory/libs.ts');
+import factoryLibs = require('./ng/factory.ts');
 factoryLibs.register(app);
 
 
