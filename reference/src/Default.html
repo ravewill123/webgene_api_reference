@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1" />
     <!-- facebook share -->
     <meta property="og:type" content="website" />
-    <meta property="fb:app_id" content="{%= o.htmlWebpackPlugin.options.release ? '368802019956990' : '484251458252681' %}" />
+    <meta property="fb:app_id" content="<%- htmlWebpackPlugin.options.release ? '368802019956990' : '484251458252681' %>" />
     <meta property="og:url" content=""/>
     <meta property="og:title" content="AngularJS Website" />
     <meta property="og:description" content="單頁式網頁使用AngularJS 1.4x作法" />
@@ -18,7 +18,7 @@
     <!-- css style -->
     <link rel="stylesheet" href="css/style.css">
 
-    {% if (!o.htmlWebpackPlugin.options.release) { %}
+    <% if (!htmlWebpackPlugin.options.release) { %>
     <!-- 替換正式設定用資料 -->
     <script>
         window.setting = {
@@ -26,7 +26,7 @@
           description: "Replace WebGene Template Setting"
         };
     </script>
-    {% } %}
+    <% } %>
     <!-- 還可以像這樣讀出資源後操作 (htmlWebpackPlugin.files)
 
         {
@@ -46,9 +46,9 @@
           }
         }
 
-        {% for (var chunk in o.htmlWebpackPlugin.files.chunks) { %}
-            <script src="{%=o.htmlWebpackPlugin.files.chunks[chunk].entry %}"></script>
-        {% } %}
+        <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+            <script src="<%=htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+        <% } %>
     -->
 </head>
 <body>
