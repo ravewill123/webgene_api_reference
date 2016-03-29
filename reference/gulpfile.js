@@ -9,9 +9,9 @@
  * $ tsd install
  *
  *              測試模式發佈: $ npm run dev
- *     測試模式發佈 + minify: $ npm run minify
- *           livereload監控: $ npm run watch
- *   webpack-dev-server監控: $ npm run serve
+ *     測試模式發佈 + minify: $ npm run dev:minify
+ *           livereload監控: $ npm run dev:watch
+ *   webpack-dev-server監控: $ npm run dev:server
  *     正式模式發佈 + minify: $ npm run release
  */
 
@@ -20,7 +20,7 @@ var gulp = require('gulp'),
     webpack = require("webpack"),
     WebpackDevServer = require("webpack-dev-server"),
     del = require('del'); // 跟gulp-clean一樣也是清除檔案，但用法比較簡單
-
+var argv = require('minimist')(process.argv.slice(2), { boolean:['release', 'mini'] });
 
 var port = 8080;
 var webpackConfig = require("./webpack.config.js");
@@ -79,7 +79,7 @@ gulp.task('connect', function() {
 gulp.task("webpack", function(callback) {
     // run webpack
     var Config = Object.create(webpackConfig);
-    if (process.env.DEPLOY === "1") {
+    if (argv.mini) {
         Config.plugins.push(new webpack.optimize.UglifyJsPlugin({
             // 壓縮js文件等同 webpack -p 但好像快一些
             compress: {
@@ -143,8 +143,10 @@ gulp.task('cleanCSS', function(callback) {
         callback();
     });
 });
-gulp.task('clear', ['cleanImg', 'cleanCSS'], function(callback) {
-    callback();
+gulp.task('clear', [], function(callback) {
+    del(['build/']).then(paths => {
+        callback();
+    });
 });
 
 ///////////////////////////////
@@ -210,7 +212,7 @@ gulp.task('styles', ['cleanCSS'], function() {
             browsers: ['> 5%'],
             cascade: false
         }))
-        .pipe(process.env.DEPLOY === "1" ? $.minifyCss() : $.util.noop())
+        .pipe(argv.mini ? $.minifyCss() : $.util.noop())
         .pipe(gulp.dest('build/css'))
         //.pipe($.notify({ message: 'Styles task complete' }))
         .pipe($.connect.reload());

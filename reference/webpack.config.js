@@ -1,6 +1,7 @@
 var path = require('path'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
     webpack = require("webpack");
+var argv = require('minimist')(process.argv.slice(2), { boolean:['release', 'mini'] });
 
 module.exports = {
     entry: {
@@ -14,32 +15,32 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         // html-webpack-plugin可以做很細微的操作，可以參考官方文件
         new HtmlWebpackPlugin({
-            release: process.env.RELEASE === "1",
+            release: argv.release,
             chunks: ['app'], // 指定對應到的entry為app
             filename: 'Default.html',
             template: './src/Default.html',
             inject: 'body',
             hash: true,
             minify: {
-                minifyCSS: process.env.DEPLOY === "1" ? true : false,
-                minifyJS: process.env.DEPLOY === "1" ? true : false,
-                removeComments: process.env.DEPLOY === "1" ? true : false,
-                collapseWhitespace: process.env.DEPLOY === "1" ? true : false,
+                minifyCSS: argv.mini,
+                minifyJS: argv.mini,
+                removeComments: argv.mini,
+                collapseWhitespace: argv.mini,
                 preserveLineBreaks: true
             }
         }),
         new HtmlWebpackPlugin({
-            release: process.env.RELEASE === "1",
+            release: argv.release,
             chunks: ['otherPage'], // 指定對應到的entry為otherPage
             filename: 'otherPage.html',
             template: './src/otherPage.html',
             inject: 'body',
             hash: true,
             minify: {
-                minifyCSS: process.env.DEPLOY === "1" ? true : false,
-                minifyJS: process.env.DEPLOY === "1" ? true : false,
-                removeComments: process.env.DEPLOY === "1" ? true : false,
-                collapseWhitespace: process.env.DEPLOY === "1" ? true : false,
+                minifyCSS: argv.mini,
+                minifyJS: argv.mini,
+                removeComments: argv.mini,
+                collapseWhitespace: argv.mini,
                 preserveLineBreaks: true
             }
         }),
@@ -48,17 +49,17 @@ module.exports = {
             filename: 'bannerPage.html',
             template: './src/bannerPage.html',
             minify: {
-                minifyCSS: process.env.DEPLOY === "1" ? true : false,
-                minifyJS: process.env.DEPLOY === "1" ? true : false,
-                removeComments: process.env.DEPLOY === "1" ? true : false,
-                collapseWhitespace: process.env.DEPLOY === "1" ? true : false,
+                minifyCSS: argv.mini,
+                minifyJS: argv.mini,
+                removeComments: argv.mini,
+                collapseWhitespace: argv.mini,
                 preserveLineBreaks: true
             }
         }),
         new webpack.DefinePlugin({
             // 將 Environment Variables - 環境變數傳入
             'process.env': JSON.stringify({
-                RELEASE: process.env.RELEASE
+                RELEASE: argv.release
             })
         })
     ],
