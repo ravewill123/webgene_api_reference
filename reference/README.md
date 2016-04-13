@@ -5,9 +5,7 @@
 ## 執行建構
 
 ```shell
-$ npm install
-$ tsd install
-
+$ npm run installer    // npm install & tsd install
 $ npm run dev          // 測試模式發佈
 $ npm run dev:minify   // 測試模式 + minify
 $ npm run dev:watch    // livereload監控

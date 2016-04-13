@@ -122,7 +122,7 @@ gulp.task("webpack-dev-server", function(callback) {
         $.util.log("[webpack-dev-server]", "http://localhost:" + port + "/webpack-dev-server/build/");
         // keep the server alive or continue?
         // callback();
-        gulp.src(['src/**/*']).pipe($.open({uri: "http://localhost:"+port+"/build/"}));
+        gulp.src(['src/**/*']).pipe($.open({uri: "http://localhost:"+port+"/build/Default.html"}));
     });
     gulp.watch('src/asset/**/*', ['copySVG']);
     gulp.watch('src/img/**/*', ['copyImg']);
@@ -212,7 +212,7 @@ gulp.task('styles', ['cleanCSS'], function() {
             browsers: ['> 5%'],
             cascade: false
         }))
-        .pipe(argv.mini ? $.minifyCss() : $.util.noop())
+        .pipe(argv.mini ? $.cleanCss({compatibility: 'ie8'}) : $.util.noop())
         .pipe(gulp.dest('build/css'))
         //.pipe($.notify({ message: 'Styles task complete' }))
         .pipe($.connect.reload());

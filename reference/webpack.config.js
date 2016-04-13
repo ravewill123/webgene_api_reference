@@ -4,6 +4,7 @@ var path = require('path'),
 var argv = require('minimist')(process.argv.slice(2), { boolean:['release', 'mini'] });
 
 module.exports = {
+    devtool: argv.mini ? "" : "eval",
     entry: {
         app: ['./src/js/app.ts'],
         otherPage: ['./src/js/otherPage.ts'],
